@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Home Page</h1>
+
+<a class="btn btn-outline-success" href="{% url 'emp-create' %}">Add Employee</a>
+<a class="btn btn-outline-primary" href="{% url 'emp-read' %}">List Employee</a>
+
+{% endblock content %}

@@ -1,0 +1,127 @@
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+local_settings.py
+db.sqlite3
+media
+media_cdn
+static_cdn
+
+# Backup files # 
+*.bak
+
+# Python # 
+*.py[cod] 
+*$py.class 
+
+# Distribution / packaging 
+.Python build/ 
+develop-eggs/ 
+dist/ 
+downloads/ 
+eggs/ 
+.eggs/ 
+lib/ 
+lib64/ 
+parts/ 
+sdist/ 
+var/ 
+wheels/ 
+*.egg-info/ 
+.installed.cfg 
+*.egg 
+*.manifest 
+*.spec 
+
+# Installer logs 
+pip-log.txt 
+pip-delete-this-directory.txt 
+
+# Unit test / coverage reports 
+htmlcov/ 
+.tox/ 
+.coverage 
+.coverage.* 
+.cache 
+.pytest_cache/ 
+nosetests.xml 
+coverage.xml 
+*.cover 
+.hypothesis/ 
+
+# Jupyter Notebook 
+.ipynb_checkpoints 
+
+# pyenv 
+.python-version 
+
+# celery 
+celerybeat-schedule.* 
+
+# SageMath parsed files 
+*.sage.py 
+
+# Environments 
+.env 
+.venv 
+env/ 
+venv/ 
+ENV/ 
+env.bak/ 
+venv.bak/ 
+
+# mkdocs documentation 
+/site 
+
+# mypy 
+.mypy_cache/ 
+
+# Atom
+*.swp
+*~
+.DS_Store
+.eslintcache
+Thumbs.db
+.project
+.svn
+.nvm-version
+.vscode
+.python-version
+node_modules
+*.log
+/tags
+/atom-shell/
+/out/
+docs/output
+docs/includes
+spec/fixtures/evil-files/
+!spec/fixtures/packages/package-with-incompatible-native-module-loaded-conditionally/node_modules/
+out/
+/electron/
+
+# Sublime Text # 
+*.tmlanguage.cache 
+*.tmPreferences.cache 
+*.stTheme.cache 
+*.sublime-workspace 
+*.sublime-project 
+
+# sftp configuration file 
+sftp-config.json 
+
+# Package control specific files Package 
+Control.last-run 
+Control.ca-list 
+Control.ca-bundle 
+Control.system-ca-bundle 
+GitHub.sublime-settings 
+
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
