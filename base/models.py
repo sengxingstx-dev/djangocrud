@@ -1,6 +1,13 @@
 from django.db import models
-from django import forms
+from django.contrib.auth.models import AbstractUser
 
+
+
+class User(AbstractUser):
+    profile_image = models.ImageField(null=True, blank=True, default='profile_images/default.png', upload_to='profile_images/')
+
+    class Meta:
+        swappable = 'AUTH_USER_MODEL'
 
 
 class Employee(models.Model):
@@ -28,27 +35,3 @@ class Employee(models.Model):
         return f'{self.firstname} {self.lastname}'
 
 
-class EmployeeForm(forms.ModelForm):
-    class Meta:
-        model = Employee
-        fields = '__all__'
-        labels = {
-            'firstname': 'ຊື່',
-            'lastname': 'ນາມສະກຸນ',
-            'gender': 'ເພດ',
-            'position': 'ຕຳແຫນ່ງ',
-            'salary': 'ເງິນເດືອນ',
-            'address': 'ທີ່ຢູ່',
-            'email': 'ອີເມວ',
-            'phone': 'ເບີໂທ',
-            'birthday': 'ວັນເກີດ',
-            'religion': 'ສາສະຫນາ',
-            'addition_note': 'ບັນທືກເພີ່ມເຕີມ'
-        }
-        widgets = {
-            'gender': forms.RadioSelect(),
-            'birthday': forms.DateInput(attrs={'type': 'date'}),
-            'religion': forms.Select(),
-            'address': forms.Textarea(attrs={'rows': '3'}),
-            'addition_note': forms.Textarea(attrs={'rows': '3'}),
-        }

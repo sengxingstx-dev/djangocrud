@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Home Page</h1>
-
-<a class="btn btn-outline-success" href="{% url 'emp-create' %}">Add Employee</a>
-<a class="btn btn-outline-primary" href="{% url 'emp-read' %}">List Employee</a>
+<div class="container-fluid">
+    <h1>Home Page</h1>
+    
+    {% if request.user.is_authenticated %}
+    <a class="btn btn-outline-success" href="{% url 'emp-create' %}">Add Employee</a>
+    <a class="btn btn-outline-primary" href="{% url 'emp-read' %}">List Employee</a>
+    {% else %}
+    <a class="btn btn-outline-primary" href="{% url 'emp-read' %}">List Employee</a>
+    {% endif %}
+</div>
 
 {% endblock content %}

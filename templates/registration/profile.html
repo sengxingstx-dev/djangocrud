@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4 mb-4">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Profile Info</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" class="form-control" id="username" value="{{ user.username }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" value="{{ user.email }}" readonly>
+            </div>
+            <div class="form-group">
+              <label for="first_name">First name:</label>
+              <input type="text" class="form-control" id="first_name" value="{{ user.first_name }}" readonly>
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last name:</label>
+              <input type="text" class="form-control" id="last_name" value="{{ user.last_name }}" readonly>
+            </div>
+            <!-- <!- Add additional user information fields as needed -> -->
+
+            <!-- <!- You can also display the user's profile picture if available -> -->
+            {% if user.profile_image %}
+              <div class="form-group">
+                <label>Profile Picture:</label>
+                <img src="{{ user.profile_image.url }}" alt="Profile Picture" class="img-fluid">
+              </div>
+            {% endif %}
+          </div>
+          <div class="card-footer align-items-center justify-content-center">
+            <a href="{% url 'update-profile' pk=request.user.id %}" class="btn btn-primary">Edit Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
