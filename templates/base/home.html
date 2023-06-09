@@ -9,7 +9,7 @@
     <a class="btn btn-outline-primary" href="{% url 'emp-read' %}">List Employees</a>
     <br><br>
     <a class="btn btn-outline-success" href="{% url 'prod-create' %}">Add Product</a>
-    <a class="btn btn-outline-primary" href="{% url 'prod-read' %}">List Products</a>
+    <a class="btn btn-outline-primary" href="{% url 'prod-read' pg=1 %}">List Products</a>
     {% else %}
     <a class="btn btn-outline-primary" href="{% url 'emp-read' %}">List Employees</a>
     <a class="btn btn-outline-primary" href="{% url 'prod-read' %}">List Products</a>

@@ -24,22 +24,35 @@
             </tr>
         </thead>
         <tbody>
-            {% for prod in products %}
+            {% for r in page %}
             <tr>
                 <td>
-                    <a href="{% url 'prod-update' id=prod.id %}">Edit</a>
+                    <a href="{% url 'prod-update' id=r.id %}">Edit</a>
                     |
-                    <a href="javascript:del(`{% url 'prod-delete' id=prod.id %}`)">Delete</a>
+                    <a href="javascript:del(`{% url 'prod-delete' id=r.id %}`)">Delete</a>
                 </td>
-                <td>{{ prod.id }}</td>
-                <td>{{ prod.name }}</td>
-                <td>{{ prod.description }}</td>
-                <td>{{ prod.price }}</td>
-                <td>{{ prod.employee }}</td>
+                <td>{{ r.id }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.description }}</td>
+                <td>{{ r.price }}</td>
+                <td>{{ r.employee }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <div class="mt-4 text-center">
+        {% for n in page.paginator.page_range %}
+            {% if n != page.number %}
+            <a href="{% url 'prod-read' pg=n %}">{{ n }}</a>
+            {% else %}
+            {{ n }}
+            {% endif %}
+
+            {% if not forloop.last %}
+            -
+            {% endif %}
+        {% endfor %}
+    </div>
 </div>
 
 <script>

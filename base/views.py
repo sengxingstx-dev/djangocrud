@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
+from django.core.paginator import Paginator
 from .models import Employee, Product
 
 from .models import User
@@ -90,10 +91,15 @@ def employee_delete(request, id):
     return redirect('emp-read')
 
 
-def product_list(request):
-    products = Product.objects.all()
+def product_list(request, pg):
+    if pg == None:
+        pg = 1
 
-    return render(request, 'base/prod_read.html', {'products': products})
+    products = Product.objects.all()
+    pgn = Paginator(products, 2)
+    page = pgn.get_page(pg)
+
+    return render(request, 'base/prod_read.html', {'products': products, 'page': page})
 
 
 def product_create(request):
