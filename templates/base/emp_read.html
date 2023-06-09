@@ -16,6 +16,7 @@
         <thead class="thead-dark">
             <tr>
                 <th></th>
+                <th>id</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Gender</th>
@@ -37,6 +38,7 @@
                     |
                     <a href="javascript:del(`{% url 'emp-delete' id=emp.id %}`)">Delete</a>
                 </td>
+                <td>{{ emp.id }}</td>
                 <td>{{ emp.firstname }}</td>
                 <td>{{ emp.lastname }}</td>
                 <td>{{ emp.gender }}</td>

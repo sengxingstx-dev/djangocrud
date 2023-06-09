@@ -35,3 +35,11 @@ class Employee(models.Model):
         return f'{self.firstname} {self.lastname}'
 
 
+class Product(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField(null=True, blank=True)
+    price = models.FloatField(default=0)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='product_employee')
+
+    def __str__(self):
+        return f'{self.name}'

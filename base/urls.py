@@ -15,4 +15,10 @@ urlpatterns = [
     path('employee/search/', views.employee_search, name='emp-search'),
     path('employee/update/<int:id>/', views.employee_update, name='emp-update'),
     path('employee/delete/<int:id>/', views.employee_delete, name='emp-delete'),
+
+    path('product/create/', views.product_create, name='prod-create'),
+    path('product/list/', views.product_list, name='prod-read'),
+    path('product/search/', views.product_search, name='prod-search'),
+    path('product/update/<int:id>/', views.product_update, name='prod-update'),
+    path('product/delete/<int:id>/', views.product_delete, name='prod-delete'),
 ]

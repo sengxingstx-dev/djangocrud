@@ -2,7 +2,7 @@ from django import forms
 # from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-from . models import User, Employee
+from . models import User, Employee, Product
 
 
 class SignUpForm(UserCreationForm):
@@ -48,3 +48,9 @@ class EmployeeForm(forms.ModelForm):
             'address': forms.Textarea(attrs={'rows': '3'}),
             'addition_note': forms.Textarea(attrs={'rows': '3'}),
         }
+
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = '__all__'
